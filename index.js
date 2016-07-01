@@ -101,6 +101,10 @@ exports.password = function(msg, mask){
  * @api private
  */
 
-function bool(str) {
+function bool(str,mask) {
+  if (mask===undefined) {
   return /^y|yes|ok|true$/i.test(str);
+  } else {
+    return mask.test(str);
+  }
 }
